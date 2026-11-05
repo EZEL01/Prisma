@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- Meta etiqueta clave para la correcta visualización y adaptación mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Prisma - Indumentaria</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <div class="logo-placeholder">
+            [ Espacio Logo ]
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#hombre">Hombre</a></li>
+                <li><a href="#mujer">Mujer</a></li>
+                <li>
+                    <button class="cart-icon-btn" onclick="toggleCart()">
+                        🛒 Carrito <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner Principal -->
+    <section class="hero">
+        <h1>PRISMA</h1>
+        <p>Tu estilo, tu esencia</p>
+    </section>
+
+    <!-- Banner de Métodos de Pago -->
+    <div class="payment-banner">
+        <strong>Métodos de Pago:</strong>
+        <span>💳 Tarjetas</span> | 
+        <span>🏦 Transferencia</span>
+    </div>
+
+    <!-- Barra de Filtros -->
+    <div class="filter-section">
+        <div class="filter-group">
+            <label for="filterSize">Talle:</label>
+            <select id="filterSize" onchange="filterProducts()">
+                <option value="all">Todos</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="filterColor">Color:</label>
+            <select id="filterColor" onchange="filterProducts()">
+                <option value="all">Todos</option>
+                <option value="negro">Negro</option>
+                <option value="blanco">Blanco</option>
+                <option value="azul">Azul</option>
+                <option value="gris">Gris</option>
+            </select>
+        </div>
+
+        <button class="clear-filters-btn" onclick="resetFilters()">Limpiar Filtros</button>
+    </div>
+
+    <div class="container">
+        <!-- SECCIÓN HOMBRE -->
+        <section id="hombre">
+            <h2 class="gender-title">Hombre</h2>
+
+            <h3 class="category-title">Pantalón Largo</h3>
+            <div class="product-grid">
+                <div class="product-card" data-size="M" data-color="negro">
+                    <div class="image-placeholder">[ Imagen ]</div>
+                    <div class="product-name">Pantalón Largo Hombre</div>
+                    <div class="product-details">Talle: M | Color: Negro</div>
+                    <div class="price">$X</div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Pantalón Largo Hombre (M, Negro)', 'X')">Agregar al Carrito</button>
+                </div>
+            </div>
+
+            <h3 class="category-title">Pantalón Corto</h3>
+            <div class="product-grid">
+                <div class="product-card" data-size="L" data-color="azul">
+                    <div class="image-placeholder">[ Imagen ]</div>
+                    <div class="product-name">Pantalón Corto Hombre</div>
+                    <div class="product-details">Talle: L | Color: Azul</div>
+                    <div class="price">$X</div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Pantalón Corto Hombre (L, Azul)', 'X')">Agregar al Carrito</button>
+                </div>
+            </div>
+
+            <h3 class="category-title">Remera Manga Larga</h3>
+            <div class="product-grid">
+                <div class="product-card" data-size="S" data-color="gris">
+                    <div class="image-placeholder">[ Imagen ]</div>
+                    <div class="product-name">Remera Manga Larga Hombre</div>
+                    <div class="product-details">Talle: S | Color: Gris</div>
+                    <div class="price">$X</div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Remera Manga Larga Hombre (S, Gris)', 'X')">Agregar al Carrito</button>
+                </div>
+            </div>
+
+            <h3 class="category-title">Remera Manga Corta</h3>
+            <div class="product-grid">
+                <div class="product-card" data-size="M" data-color="blanco">
+                    <div class="image-placeholder">[ Imagen ]</div>
+                    <div class="product-name">Remera Manga Corta Hombre</div>
+                    <div class="product-details">Talle: M | Color: Blanco</div>
+                    <div class="price">$X</div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Remera Manga Corta Hombre (M, Blanco)', 'X')">Agregar al Carrito</button>
+                </div>
+            </div>
+
+            <h3 class="category-title">Ropa Interior</h3>
+            <div class="product-grid">
+                <div class="product-card" data-size="M" data-color="negro">
+                    <div class="image-placeholder">[ Imagen ]</div>
+                    <div class="product-name">Ropa Interior Hombre</div>
+                    <div class="product-details">Talle: M | Color: Negro</div>
+                    <div class="price">$X</div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Ropa Interior Hombre (M, Negro)', 'X')">Agregar al Carrito</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN MUJER -->
+        <section id="mujer">
+            <h2 class="gender-title">Mujer</h2>
+
+            <h3 class="category-title">Pantalón Largo</h3>
+            <div class="product-grid">
+                <div class="product-card" data-size="S" data-color="negro">
+                    <div class="image-placeholder">[ Imagen ]</div>
+                    <div class="product-name">Pantalón Largo Mujer</div>
+                    <div class="product-details">Talle: S | Color: Negro</div>
+                    <div class="price">$X</div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Pantalón Largo Mujer (S, Negro)', 'X')">Agregar al Carrito</button>
+                </div>
+            </div>
+
+            <h3 class="category-title">Pantalón Corto</h3>
+            <div class="product-grid">
+                <div class="product-card" data-size="M" data-color="blanco">
+                    <div class="image-placeholder">[ Imagen ]</div>
+                    <div class="product-name">Pantalón Corto Mujer</div>
+                    <div class="product-details">Talle: M | Color: Blanco</div>
+                    <div class="price">$X</div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Pantalón Corto Mujer (M, Blanco)', 'X')">Agregar al Carrito</button>
+                </div>
+            </div>
+
+            <h3 class="category-title">Remera Manga Larga</h3>
+            <div class="product-grid">
+                <div class="product-card" data-size="L" data-color="gris">
+                    <div class="image-placeholder">[ Imagen ]</div>
+                    <div class="product-name">Remera Manga Larga Mujer</div>
+                    <div class="product-details">Talle: L | Color: Gris</div>
+                    <div class="price">$X</div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Remera Manga Larga Mujer (L, Gris)', 'X')">Agregar al Carrito</button>
+                </div>
+            </div>
+
+            <h3 class="category-title">Remera Manga Corta</h3>
+            <div class="product-grid">
+                <div class="product-card" data-size="S" data-color="azul">
+                    <div class="image-placeholder">[ Imagen ]</div>
+                    <div class="product-name">Remera Manga Corta Mujer</div>
+                    <div class="product-details">Talle: S | Color: Azul</div>
+                    <div class="price">$X</div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Remera Manga Corta Mujer (S, Azul)', 'X')">Agregar al Carrito</button>
+                </div>
+            </div>
+
+            <h3 class="category-title">Ropa Interior</h3>
+            <div class="product-grid">
+                <div class="product-card" data-size="M" data-color="blanco">
+                    <div class="image-placeholder">[ Imagen ]</div>
+                    <div class="product-name">Ropa Interior Mujer</div>
+                    <div class="product-details">Talle: M | Color: Blanco</div>
+                    <div class="price">$X</div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Ropa Interior Mujer (M, Blanco)', 'X')">Agregar al Carrito</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal del Carrito -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Tu Carrito</h2>
+                <button class="close-cart-btn" onclick="toggleCart()">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <p style="text-align: center; color: #8d7568; margin-top: 20px;">El carrito está vacío.</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total estimado:</span>
+                    <span id="cartTotal">$X</span>
+                </div>
+                <button class="checkout-btn" onclick="sendCartToWhatsApp()">Enviar pedido por WhatsApp</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.me/5493482406538" class="whatsapp-btn" target="_blank" aria-label="Contactar por WhatsApp">
+        <svg viewBox="0 0 32 32">
+            <path d="M16 2a13 13 0 0 0-11.25 19.5L3 29l7.71-1.7A13 13 0 1 0 16 2zm0 24a10.9 10.9 0 0 1-5.56-1.52l-.4-.24-4.58 1 1-4.47-.26-.41A10.91 10.91 0 1 1 16 26zm6-8.15c-.33-.16-1.95-.96-2.25-1.07s-.52-.16-.74.16-.86 1.07-1.05 1.29-.39.25-.72.08a9.14 9.14 0 0 1-2.69-1.66 10.07 10.07 0 0 1-1.86-2.32c-.19-.33 0-.5.16-.66s.33-.39.49-.58a2.23 2.23 0 0 0 .33-.55.61.61 0 0 0 0-.58c-.08-.16-.74-1.78-1-2.44s-.54-.56-.74-.57h-.63a1.21 1.21 0 0 0-.88.41 3.7 3.7 0 0 0-1.15 2.75 6.44 6.44 0 0 0 1.36 3.42 14.73 14.73 0 0 0 5.63 4.97c2.32.93 2.8.74 3.3.69a2.82 2.82 0 0 0 1.88-1.32 2.3 2.3 0 0 0 .16-1.32c-.08-.13-.31-.22-.64-.38z"/>
+        </svg>
+    </a>
+
+    <footer>
+        <p>&copy; 2026 Prisma - Todos los derechos reservados</p>
+    </footer>
+
+    <!-- Lógica de Filtros y Carrito -->
+    <script>
+        let cart = [];
+
+        function toggleCart() {
+            const modal = document.getElementById('cartModal');
+            modal.style.display = (modal.style.display === 'flex') ? 'none' : 'flex';
+        }
+
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            updateCartUI();
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            document.getElementById('cartCount').innerText = cart.length;
+            const itemsContainer = document.getElementById('cartItems');
+            
+            if (cart.length === 0) {
+                itemsContainer.innerHTML = '<p style="text-align: center; color: #8d7568; margin-top: 20px;">El carrito está vacío.</p>';
+                return;
+            }
+
+            itemsContainer.innerHTML = '';
+            cart.forEach((item, index) => {
+                const itemElement = document.createElement('div');
+                itemElement.className = 'cart-item';
+                itemElement.innerHTML = `
+                    <div class="cart-item-info">
+                        <p>${item.name}</p>
+                        <small>Precio: $${item.price}</small>
+                    </div>
+                    <button class="remove-item-btn" onclick="removeFromCart(${index})">Eliminar</button>
+                `;
+                itemsContainer.appendChild(itemElement);
+            });
+        }
+
+        function sendCartToWhatsApp() {
+            if (cart.length === 0) {
+                alert("Tu carrito está vacío.");
+                return;
+            }
+
+            let message = "Hola! Quisiera realizar el siguiente pedido en Prisma:\n\n";
+            cart.forEach((item, index) => {
+                message += `${index + 1}. ${item.name} - $${item.price}\n`;
+            });
+            message += "\nMétodo de pago a convenir (Transferencia / Tarjeta).";
+
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/5493482406538?text=${encodedMessage}`, '_blank');
+        }
+
+        function filterProducts() {
+            const size = document.getElementById('filterSize').value;
+            const color = document.getElementById('filterColor').value;
+            const products = document.querySelectorAll('.product-card');
+
+            products.forEach(product => {
+                const productSize = product.getAttribute('data-size');
+                const productColor = product.getAttribute('data-color');
+
+                const matchesSize = (size === 'all' || productSize === size);
+                const matchesColor = (color === 'all' || productColor === color);
+
+                if (matchesSize && matchesColor) {
+                    product.style.display = 'flex';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+
+        function resetFilters() {
+            document.getElementById('filterSize').value = 'all';
+            document.getElementById('filterColor').value = 'all';
+            filterProducts();
+        }
+    </script>
+</body>
+</html>

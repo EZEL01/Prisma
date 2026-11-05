@@ -1,0 +1,474 @@
+/* Paleta de Colores:
+   - Beige principal (Fondo web): #FDFBF7
+   - Beige secundario (Tarjetas/Contenedores): #F7F0E6
+   - Chocolate (Texto, Encabezado, Botones principales): #3D2314
+   - Chocolate medio (Detalles/Bordes): #5C3A21
+   - Rosa Pastel (Acentos, Hero, Badges, Hovers): #F4C2C2
+   - Rosa Pastel Suave (Fondo alternativo): #FADCD9
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #FDFBF7;
+    color: #3D2314;
+    line-height: 1.6;
+}
+
+/* Encabezado */
+header {
+    background-color: #F7F0E6;
+    border-bottom: 2px solid #E6D7C3;
+    padding: 12px 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-placeholder {
+    width: 120px;
+    height: 40px;
+    border: 2px dashed #5C3A21;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FDFBF7;
+    color: #3D2314;
+    font-weight: bold;
+    font-size: 0.8rem;
+    border-radius: 4px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #3D2314;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: #8D4B55;
+}
+
+.cart-icon-btn {
+    background: #3D2314;
+    color: #FDFBF7;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.cart-icon-btn:hover {
+    background: #F4C2C2;
+    color: #3D2314;
+}
+
+.cart-count {
+    background: #F4C2C2;
+    color: #3D2314;
+    border-radius: 50%;
+    padding: 1px 6px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+/* Hero / Banner Principal */
+.hero {
+    background-color: #FADCD9;
+    color: #3D2314;
+    text-align: center;
+    padding: 35px 20px;
+    border-bottom: 1px solid #E6D7C3;
+}
+
+.hero h1 {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.hero p {
+    font-style: italic;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* Banner de Métodos de Pago */
+.payment-banner {
+    background-color: #F7F0E6;
+    border-left: 5px solid #F4C2C2;
+    max-width: 1200px;
+    margin: 15px auto;
+    padding: 10px 15px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #3D2314;
+    box-shadow: 0 2px 4px rgba(61, 35, 20, 0.04);
+}
+
+.payment-banner strong {
+    color: #3D2314;
+}
+
+/* Barra de Filtros */
+.filter-section {
+    background: #F7F0E6;
+    padding: 12px 15px;
+    margin: 15px auto;
+    max-width: 1200px;
+    border-radius: 8px;
+    border: 1px solid #E6D7C3;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-grow: 1;
+}
+
+.filter-group label {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #3D2314;
+}
+
+.filter-group select {
+    padding: 6px 10px;
+    border: 1px solid #E6D7C3;
+    border-radius: 4px;
+    background: #FDFBF7;
+    color: #3D2314;
+    cursor: pointer;
+    outline: none;
+    width: 100%;
+    font-size: 0.85rem;
+}
+
+.clear-filters-btn {
+    background: #F4C2C2;
+    color: #3D2314;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    width: 100%;
+}
+
+.clear-filters-btn:hover {
+    background: #E8B0B0;
+}
+
+/* Contenido Principal */
+.container {
+    display: block;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    padding: 0 15px;
+}
+
+.gender-title {
+    font-size: 1.6rem;
+    border-bottom: 3px solid #3D2314;
+    padding-bottom: 4px;
+    margin: 30px 0 15px 0;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #3D2314;
+}
+
+.category-title {
+    font-size: 1.15rem;
+    margin: 20px 0 12px 0;
+    color: #5C3A21;
+    border-left: 4px solid #F4C2C2;
+    padding-left: 8px;
+}
+
+/* Grilla de Productos (Adaptable a celular vertical y horizontal) */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas pequeñas verticales */
+    gap: 12px;
+}
+
+.product-card {
+    background: #F7F0E6;
+    border: 1px solid #E6D7C3;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(61, 35, 20, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 140px;
+    border: 2px dashed #D6C2AF;
+    background-color: #FDFBF7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #8D7568;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+}
+
+.product-name {
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #3D2314;
+    font-size: 0.9rem;
+}
+
+.product-details {
+    font-size: 0.75rem;
+    color: #5C3A21;
+    margin-bottom: 6px;
+}
+
+.price {
+    font-size: 1.05rem;
+    font-weight: bold;
+    color: #3D2314;
+    margin-bottom: 8px;
+}
+
+.add-to-cart-btn {
+    background-color: #3D2314;
+    color: #FDFBF7;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    font-size: 0.8rem;
+}
+
+/* Modal de Carrito de Compras (Pantalla completa en mobile) */
+.cart-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(61, 35, 20, 0.5);
+    z-index: 2000;
+    justify-content: flex-end;
+}
+
+.cart-content {
+    background: #FDFBF7;
+    width: 100%;
+    max-width: 100%; /* Ocupa toda la pantalla en celulares verticales */
+    height: 100%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -4px 0 15px rgba(0,0,0,0.15);
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #E6D7C3;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.cart-header h2 {
+    color: #3D2314;
+    font-size: 1.25rem;
+}
+
+.close-cart-btn {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #3D2314;
+    padding: 0 5px;
+}
+
+.cart-items {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #F7F0E6;
+}
+
+.cart-item-info p {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #3D2314;
+    margin: 0;
+}
+
+.cart-item-info small {
+    color: #5C3A21;
+    font-size: 0.75rem;
+}
+
+.remove-item-btn {
+    background: #E8B0B0;
+    color: #3D2314;
+    border: none;
+    padding: 5px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.cart-footer {
+    border-top: 1px solid #E6D7C3;
+    padding-top: 12px;
+    margin-top: 10px;
+}
+
+.cart-total {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #3D2314;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.checkout-btn {
+    background: #3D2314;
+    color: #FDFBF7;
+    border: none;
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+/* Botón de WhatsApp Flotante */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    background-color: #25d366;
+    color: white;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 4px 10px rgba(61, 35, 20, 0.25);
+    text-decoration: none;
+    z-index: 1000;
+}
+
+.whatsapp-btn svg {
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #3D2314;
+    color: #FDFBF7;
+    margin-top: 40px;
+    font-size: 0.85rem;
+}
+
+/* ========================================================
+   MEDIA QUERIES PARA PANTALLAS HORIZONTALES Y COMPUTADORAS
+   ================================================        */
+
+/* Para tablets o celulares en posición horizontal (Landscape) */
+@media (min-width: 600px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    }
+
+    .filter-section {
+        flex-wrap: nowrap;
+    }
+
+    .filter-group {
+        flex-grow: unset;
+    }
+
+    .clear-filters-btn {
+        width: auto;
+    }
+
+    .cart-content {
+        max-width: 400px; /* Vuelve a ser un panel lateral cómodo */
+    }
+}
+
+/* Para pantallas de escritorio (PC / Laptops) */
+@media (min-width: 992px) {
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Grilla fluida original */
+    }
+
+    header {
+        padding: 15px 5%;
+    }
+
+    .logo-placeholder {
+        width: 150px;
+        height: 50px;
+        font-size: 0.9rem;
+    }
+}
