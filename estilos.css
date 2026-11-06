@@ -506,3 +506,15 @@ footer {
     flex-direction: column;
     justify-content: space-between;
 }
+
+/* Asegura que la sección y el contenedor horizontal ocupen el ancho y actúen como flexbox */
+#hombre, #mujer {
+    display: block;
+    width: 100%;
+}
+
+.categories-row {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important; /* Evita que bajen de renglón y los obliga a ir en fila */
+}
