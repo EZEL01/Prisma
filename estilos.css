@@ -518,3 +518,8 @@ footer {
     flex-direction: row !important;
     flex-wrap: nowrap !important; /* Evita que bajen de renglón y los obliga a ir en fila */
 }
+
+/* Forzar una altura fija idéntica para todas las tarjetas de producto */
+.product-card {
+    height: 340px !important; /* Ajusta este valor si necesitas que sean un poco más altas o bajas */
+}
