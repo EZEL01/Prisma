@@ -476,3 +476,18 @@ footer {
         font-size: 0.9rem;
     }
 }
+
+/* Asegura que cada categoría (bloque completo de título + producto) tenga un ancho fijo y uniforme */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Si tienes tus categorías envueltas en un bloque o si quieres forzar la estructura: */
+.product-card {
+    width: 210px !important;
+    min-width: 210px !important;
+    max-width: 210px !important;
+    flex: 0 0 210px !important;
+}
