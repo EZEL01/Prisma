@@ -220,40 +220,39 @@ nav a:hover {
     padding-left: 8px;
 }
 
-/* Grilla de Productos (Adaptable a celular vertical y horizontal) */
+/* Forzar que la grilla organice todo de izquierda a derecha de forma uniforme */
 .product-grid {
-    display: flex; /* Cambia de grid a flex para alinear en fila[cite: 1] */
-    gap: 12px;
-    overflow-x: auto; /* Permite deslizar hacia los costados */
-    padding-bottom: 10px;
-    scroll-behavior: smooth;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
+/* Fijar el tamaño exacto de todas las tarjetas para que ninguna sea más grande que otra */
 .product-card {
     background: #F7F0E6;
     border: 1px solid #E6D7C3;
     border-radius: 8px;
-    padding: 10px;
+    padding: 12px;
     text-align: center;
     box-shadow: 0 2px 4px rgba(61, 35, 20, 0.05);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-width: 180px;  /* Ancho mínimo de cada tarjeta en la fila */
-    max-width: 200px;  /* Ancho máximo para mantener el orden */
-    flex-shrink: 0;    /* Evita que las tarjetas se achiquen a la fuerza */
+    width: 210px;      /* Ancho fijo para todas */
+    flex-shrink: 0;
 }
 
+/* Fijar el tamaño exacto del espacio de la imagen para que todas midan lo mismo */
 .image-placeholder {
     width: 100%;
-    height: 140px;
+    height: 160px;     /* Altura fija idéntica para todas las fotos */
     border: 2px dashed #D6C2AF;
     background-color: #FDFBF7;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #8D7568;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     border-radius: 6px;
     font-size: 0.85rem;
 }
