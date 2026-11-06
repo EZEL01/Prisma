@@ -477,17 +477,32 @@ footer {
     }
 }
 
-/* Asegura que cada categoría (bloque completo de título + producto) tenga un ancho fijo y uniforme */
-.product-grid {
+/* Hace que las categorías formen una fila horizontal de izquierda a derecha */
+.categories-row {
     display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 15px;
+    scroll-behavior: smooth;
 }
 
-/* Si tienes tus categorías envueltas en un bloque o si quieres forzar la estructura: */
+/* Fuerza a que cada bloque de categoría tenga un ancho fijo e idéntico */
+.category-block {
+    min-width: 210px;
+    max-width: 210px;
+    flex-shrink: 0;
+}
+
+/* Asegura que la tarjeta de adentro ocupe todo el ancho del bloque de forma uniforme */
 .product-card {
-    width: 210px !important;
-    min-width: 210px !important;
-    max-width: 210px !important;
-    flex: 0 0 210px !important;
+    width: 100% !important;
+    background: #F7F0E6;
+    border: 1px solid #E6D7C3;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(61, 35, 20, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
