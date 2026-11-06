@@ -222,9 +222,11 @@ nav a:hover {
 
 /* Grilla de Productos (Adaptable a celular vertical y horizontal) */
 .product-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas pequeñas verticales */
+    display: flex; /* Cambia de grid a flex para alinear en fila[cite: 1] */
     gap: 12px;
+    overflow-x: auto; /* Permite deslizar hacia los costados */
+    padding-bottom: 10px;
+    scroll-behavior: smooth;
 }
 
 .product-card {
@@ -237,6 +239,9 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    min-width: 180px;  /* Ancho mínimo de cada tarjeta en la fila */
+    max-width: 200px;  /* Ancho máximo para mantener el orden */
+    flex-shrink: 0;    /* Evita que las tarjetas se achiquen a la fuerza */
 }
 
 .image-placeholder {
